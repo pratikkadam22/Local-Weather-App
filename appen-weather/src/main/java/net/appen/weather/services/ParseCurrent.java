@@ -2,7 +2,7 @@ package net.appen.weather.services;
 
 import org.json.JSONObject;
 
-import net.appen.weather.repository.Current;
+import net.appen.weather.model.Current;
 
 public class ParseCurrent {
 	

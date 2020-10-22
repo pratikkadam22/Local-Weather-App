@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import net.appen.weather.repository.DayWeather;
+import net.appen.weather.model.DayWeather;
 import net.appen.weather.services.GetLocation;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -28,7 +28,7 @@ public class UserController {
 //	}
 	
 	@PostMapping("getWeather")
-	public List<DayWeather> getWeather(@RequestBody Map<String, String> coords) throws Exception{
+	public List<List<DayWeather>> getWeather(@RequestBody Map<String, String> coords) throws Exception{
 		return location.getWeather(coords);
 		
 	}

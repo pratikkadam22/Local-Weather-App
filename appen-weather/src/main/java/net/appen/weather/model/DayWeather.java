@@ -1,4 +1,4 @@
-package net.appen.weather.repository;
+package net.appen.weather.model;
 
 import java.util.List;
 

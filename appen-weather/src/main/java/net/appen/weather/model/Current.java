@@ -1,4 +1,4 @@
-package net.appen.weather.repository;
+package net.appen.weather.model;
 
 public class Current {
 	private double curr_time;
