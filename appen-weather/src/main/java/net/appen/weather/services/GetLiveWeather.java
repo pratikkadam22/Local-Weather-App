@@ -14,14 +14,14 @@ import net.appen.weather.model.DayWeather;
 import net.appen.weather.model.Hourly;
 
 @Service
-public class GetLocation {
+public class GetLiveWeather {
 	
 	GetRawJSON getRaw = new GetRawJSON();
 	ParseCurrent parseCurrent = new ParseCurrent();
 	ParseHourly parseHourly = new ParseHourly();
 	
 	String api_key = "70aba059b24d4f197e47d139d93b75c4";
-	public GetLocation() {
+	public GetLiveWeather() {
 		
 	}
 	
@@ -124,6 +124,7 @@ public class GetLocation {
 			List<DayWeather> weatherData = new ArrayList<DayWeather>();
 			DayWeather metricData, imperialData;
 			Long time = Long.parseLong(coords.get("time"));
+//			Long time = Long.parseLong("1603322344");
 			String timeStr = String.valueOf(time - (86400 * i));
 			metricData = getDayWeather(latitude, longitude, timeStr, "metric", i);
 			imperialData = getDayWeather(latitude, longitude, timeStr, "imperial", i);

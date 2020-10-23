@@ -5,14 +5,13 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-//import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import net.appen.weather.model.DayWeather;
-import net.appen.weather.services.GetLocation;
+import net.appen.weather.services.GetLiveWeather;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -20,16 +19,11 @@ import net.appen.weather.services.GetLocation;
 public class UserController {
 	
 	@Autowired
-	private GetLocation location;
+	private GetLiveWeather liveWeather;
 	
-//	@GetMapping("users")
-//	public List<User> getUsers(){
-//		return this.userRepository.findAll();
-//	}
 	
 	@PostMapping("getWeather")
 	public List<List<DayWeather>> getWeather(@RequestBody Map<String, String> coords) throws Exception{
-		return location.getWeather(coords);
-		
+		return liveWeather.getWeather(coords);
 	}
 }
