@@ -13,6 +13,11 @@ import org.springframework.stereotype.Service;
 import net.appen.weather.model.DayWeather;
 import net.appen.weather.model.Hourly;
 
+/**
+ * A class that parses the input JSON request and returns the requested weather data
+ * @author PRATIK
+ *
+ */
 @Service
 public class GetLiveWeather {
 	
@@ -25,10 +30,15 @@ public class GetLiveWeather {
 		
 	}
 	
-	public Integer PreProcessTime(Integer epochtime) {
-		return 0;
-	}
-	
+	/**
+	 * This function extracts the weather data for one particular day
+	 * @param latitude The latitude coordinates for current location
+	 * @param longitude The longitude coordinates for current location
+	 * @param epochtime The current time
+	 * @param unit The required unit of details(metric or imperial)
+	 * @param flag Tt is used to determine the index of the day(0 for current day)
+	 * @return Weather for a particular day
+	 */
 	public DayWeather getDayWeather(String latitude, String longitude, String epochtime, String unit, Integer flag) throws Exception {
 		DayWeather day = new DayWeather();
 		Date exp = new Date(Long.parseLong(epochtime)*1000);
@@ -115,6 +125,11 @@ public class GetLiveWeather {
 	    return day;
 	}
 	
+	/**
+	 * Returns a list of weather data for the 4 recent days.
+	 * @param coords a map containing the inputs like latitude, longitude and time from the front end
+	 * @return a list of weather data
+	 */
 	public List<List<DayWeather>> getWeather(Map<String, String> coords) throws Exception{
 		List<List<DayWeather>> weatherWeek = new ArrayList<List<DayWeather>>();
 		String latitude = coords.get("latitude").toString();

@@ -8,12 +8,22 @@ import org.json.JSONObject;
 
 import net.appen.weather.model.WeatherDescription;
 
+/**
+ * A class that parses the Weather description in words
+ * @author PRATIK
+ *
+ */
 public class ParseWeatherDescription {
 	
 	public ParseWeatherDescription() {
 		
 	}
 	
+	/**
+	 * Parses the description of weather of a particular day
+	 * @param jsonArray a JSON array containing just one element, which contain weather description of a day
+	 * @return weather description of a day
+	 */
 	public List<WeatherDescription> parseData(JSONArray jsonArray) {
 		List<WeatherDescription> weatherData = new ArrayList<WeatherDescription>();
 		for(int i = 0; i < jsonArray.length(); i++) {

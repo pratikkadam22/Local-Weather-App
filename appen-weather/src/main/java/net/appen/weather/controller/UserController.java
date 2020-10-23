@@ -21,7 +21,11 @@ public class UserController {
 	@Autowired
 	private GetLiveWeather liveWeather;
 	
-	
+	/*
+	 * The endpoint for our POST request that the front end uses to request weather data
+	 * @param coords a map containing the inputs like latitude, longitude and time from the front end
+	 * @return a list of weather data
+	 */
 	@PostMapping("getWeather")
 	public List<List<DayWeather>> getWeather(@RequestBody Map<String, String> coords) throws Exception{
 		return liveWeather.getWeather(coords);
