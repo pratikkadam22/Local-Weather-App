@@ -3,6 +3,8 @@
 ## A web application to get the latest local weather data (recent 4 days)
 
 ### Used React.js for the front end and Spring Boot for the backend
+### Used One Call API from the OpenWeatherMap service to get the weather information
+https://openweathermap.org/api/one-call-api
 
 #### Instructions
 ##### 1) Git clone the whole project
