@@ -1,4 +1,32 @@
-import React, { Component } from 'react'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/UserComponent.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/UserComponent.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { Component } from 'react'
 import axios from 'axios'
 import DayCard from './DayCard'
 import GetCity from '../services/GetCity'
@@ -80,9 +108,9 @@ class UserComponent extends Component {
      */
     degreeToggleButtons = () => {
         if(this.state.isSubmitted){
-            return <DegreeToggle key={this.state.currentDay} degreeType={this.state.degreeType} updateForecastDegree={this.updateForecastDegree}/>
+            return &lt;DegreeToggle key={this.state.currentDay} degreeType={this.state.degreeType} updateForecastDegree={this.updateForecastDegree}/>
         }
-        return (<div></div>)
+        return (&lt;div>&lt;/div>)
     }
 
     /**
@@ -91,9 +119,9 @@ class UserComponent extends Component {
     graphTitle = () => {
         if(this.state.isSubmitted){
 
-            return <GraphTitle key={this.state.time} time={this.state.time - (86400*this.state.currentDay)} />
+            return &lt;GraphTitle key={this.state.time} time={this.state.time - (86400*this.state.currentDay)} />
         }
-        return (<div></div>)
+        return (&lt;div>&lt;/div>)
     }
 
     /**
@@ -108,11 +136,11 @@ class UserComponent extends Component {
             var h;
             for (h in this.state.weatherData){
                 if (parseInt(h) === this.state.currentDay){
-                    return <div className="d-flex justify-content-center"><Graph key={h} hourlyData={this.state.weatherData[h][degreeIndex].hourly}/></div>
+                    return &lt;div className="d-flex justify-content-center">&lt;Graph key={h} hourlyData={this.state.weatherData[h][degreeIndex].hourly}/>&lt;/div>
                 }
             }
         }
-        return (<div></div>)
+        return (&lt;div>&lt;/div>)
     }
 
     /**
@@ -131,35 +159,57 @@ class UserComponent extends Component {
     formatDayCards = () => {
         if(this.state.isSubmitted){
             return this.state.weatherData.map((reading, index) =>
-                <DayCard reading={reading} key={index} index={index} degreeType={this.state.degreeType} updateDay={this.updateDay}/>)
+                &lt;DayCard reading={reading} key={index} index={index} degreeType={this.state.degreeType} updateDay={this.updateDay}/>)
         }
-        return (<div></div>)
+        return (&lt;div>&lt;/div>)
     }
 
     render() {
         return (
-            <div><br />
-                <h1 className = "text-center display-4">Local Weather Data App</h1>
-                <form onSubmit={this.onSubmit}>
-                <input 
+            &lt;div>&lt;br />
+                &lt;h1 className = "text-center display-4">Local Weather Data App&lt;/h1>
+                &lt;form onSubmit={this.onSubmit}>
+                &lt;input 
                     type="submit"
                     value="Click Here to get the Weather Report!"
                     className="btn btn-primary btn-lg active"
                     style={{flex: '3'}} />
-            </form><br />
-            <div className="container">
-            <h1 className="display-3 jumbotron">4-Day Forecast</h1>
-            <h5 className="display-5 text-muted">{this.state.city}</h5>
-            <div>{this.degreeToggleButtons()}</div><br />
-                <div className="row justify-content-center">
+            &lt;/form>&lt;br />
+            &lt;div className="container">
+            &lt;h1 className="display-3 jumbotron">4-Day Forecast&lt;/h1>
+            &lt;h5 className="display-5 text-muted">{this.state.city}&lt;/h5>
+            &lt;div>{this.degreeToggleButtons()}&lt;/div>&lt;br />
+                &lt;div className="row justify-content-center">
                 {this.formatDayCards()}
-                </div><br />
+                &lt;/div>&lt;br />
                 {this.graphTitle()}
                 {this.drawGraph()}
-            </div>
-            </div>
+            &lt;/div>
+            &lt;/div>
         )
     }
 }
 
-export default UserComponent;
+export default UserComponent;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DayCard.html">DayCard</a></li><li><a href="DegreeToggle.html">DegreeToggle</a></li><li><a href="GetCity.html">GetCity</a></li><li><a href="Graph.html">Graph</a></li><li><a href="GraphTitle.html">GraphTitle</a></li><li><a href="UserComponent.html">UserComponent</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Oct 23 2020 19:22:47 GMT-0700 (Pacific Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
